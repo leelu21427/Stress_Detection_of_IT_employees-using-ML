@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Stress Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Snoring Rate" placeholder="Snoring Rate" required="required" /><br><br>
+        <input type="text" name="Respiration rate" placeholder="Respiration rate" required="required" /><br><br>
+		<input type="text" name="Body Temperature" placeholder="Body Temeperature" required="required" /><br><br>
+		<input type="text" name="Limb Movement" placeholder="Limb Movement" required="required" /><br><br>
+		<input type="text" name="Blood Oxygen" placeholder="Blood Oxygen" required="required" /><br><br>
+        <input type="text" name="Eye Movement" placeholder="Eye Movement" required="required" /><br><br>
+        <input type="text" name="Sleeping Hours" placeholder="Sleeping Hours" required="required" /><br><br>
+        <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" /><br><br>
+        <input type="text" name="Working Hours" placeholder="Working Hours" required="required" /><br><br>
+        <input type="text" name="Shifts" placeholder="Shifts" required="required" /><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Check your Level</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

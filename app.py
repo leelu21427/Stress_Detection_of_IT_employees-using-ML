@@ -1,13 +1,14 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan  5 14:43:40 2024
 
-@author: DELL
-"""
 from flask import Flask,request, jsonify, render_template
 import pickle
 import numpy as np
+ # For older versions of scikit-learn
+
+# Load the pickled model using the correct scikit-learn version
+
 app=Flask(__name__)
+"""with open('model.pkl', 'rb') as file:
+    model = joblib.load(file)"""
 model=pickle.load(open("model.pkl","rb"))
 @app.route("/")
 def Home():
@@ -34,6 +35,6 @@ def predict():
     
     
 if __name__=="__main__":
-    app.run(debug=False,host="0.0.0.0")
+    app.run(debug=True)
     
     

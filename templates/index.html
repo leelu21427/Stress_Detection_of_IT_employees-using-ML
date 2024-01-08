@@ -18,16 +18,18 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
     	<input type="text" name="Snoring Rate" placeholder="Snoring Rate" required="required" /><br><br>
-        <input type="text" name="Respiration rate" placeholder="Respiration rate" required="required" /><br><br>
+        
 		<input type="text" name="Body Temperature" placeholder="Body Temeperature" required="required" /><br><br>
-		<input type="text" name="Limb Movement" placeholder="Limb Movement" required="required" /><br><br>
+		
 		<input type="text" name="Blood Oxygen" placeholder="Blood Oxygen" required="required" /><br><br>
-        <input type="text" name="Eye Movement" placeholder="Eye Movement" required="required" /><br><br>
+    <input type="text" name="Respiration rate" placeholder="Respiration rate" required="required" /><br><br>
+        <!--<input type="text" name="Eye Movement" placeholder="Eye Movement" required="required" /><br><br>-->
         <input type="text" name="Sleeping Hours" placeholder="Sleeping Hours" required="required" /><br><br>
         <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" /><br><br>
+        <input type="text" name="HeadAche" placeholder="HeadAche" required="required" /><br><br>
         <input type="text" name="Working Hours" placeholder="Working Hours" required="required" /><br><br>
-        <input type="text" name="Shifts" placeholder="Shifts" required="required" /><br><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Check your Level</button>
+        
+        <button type="submit" target="index2.html" class="btn btn-primary btn-block btn-large">Check your Level</button>
     </form>
 
    <br>

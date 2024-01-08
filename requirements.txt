@@ -2,5 +2,6 @@ gunicorn
 numpy
 pandas
 flask
+joblib
 scikit-learn
-
+os

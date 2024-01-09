@@ -29,12 +29,12 @@ random_forest_classifier = RandomForestClassifier(n_estimators=100, random_state
 #n_estimators=100, random_state=42
 # Train the model
 random_forest_classifier.fit(X_train, y_train)
-y_pred = random_forest_classifier.predict(X_test)
+random_forest_classifier.predict(X_test)
 
 #make pickle file
-y_predict = random_forest_classifier.predict([[52.32,94.464,92.696,18.464,5.464,56.16,0,6]])
+#y_predict = random_forest_classifier.predict([[52.32,94.464,92.696,18.464,5.464,56.16,0,6]])
 
-print(y_predict)
+#print(y_predict)
 
 
 pickle.dump(random_forest_classifier,open("model.pkl","wb"))

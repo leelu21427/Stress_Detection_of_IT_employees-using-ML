@@ -1,7 +1,9 @@
 numpy
 gunicorn
 pandas
-matplotlib
-scikit-learn
+scikit-learn==1.2.2
 flask
 pickle
+pip==23.3.2
+python==3.8
+

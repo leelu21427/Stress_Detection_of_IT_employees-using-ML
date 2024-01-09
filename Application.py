@@ -18,6 +18,7 @@ def predict():
     float_features=[float(x) for x in request.form.values()]
     features=[np.array(float_features)]
     prediction=model.predict(features)
+    print(prediction)
     if(prediction==0):
         a="rest"
     elif(prediction==1):
@@ -30,7 +31,7 @@ def predict():
         a="Extreme"
         
         
-    #print("Prediction made:", prediction)
+    print("Prediction made:", prediction)
     return render_template("index.html",prediction_text="Stress is:{}".format(a) )
     
     

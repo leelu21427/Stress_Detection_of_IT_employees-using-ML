@@ -11,10 +11,10 @@ import pickle
 import numpy as np
 import seaborn as sb
 
-df=pd.read_excel("New_Data.csv")
+df=pd.read_csv("New_Data.csv")
 
 
-X = df[["snoring_rate", 'body_temperature','blood_oxygen','respiration_rate', 'sleeping_hours', 'heart_rate','Headache',"Working_hrs"]]
+X = df[["snoring_rate", 'body_temperature','blood_oxygen','respiration_rate', 'sleeping_hours', 'heart_rate','Headache',"Working_hours"]]
 y = df['stress_level']
 #X_train, X_test, y_train, y_test=train_test_split(df.iloc[:, :8], df['stress_level'],test_size=0.2, random_state=8)
 
@@ -25,16 +25,16 @@ sc=StandardScaler()
 X_train=sc.fit_transform(X_train)
 X_test=sc.transform(X_test)
 
-random_forest_classifier = RandomForestClassifier()
+random_forest_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 #n_estimators=100, random_state=42
 # Train the model
 random_forest_classifier.fit(X_train, y_train)
 y_pred = random_forest_classifier.predict(X_test)
 
 #make pickle file
-#y_predict = random_forest_classifier.predict([[60.0,20.0,96.0,10.0,95.0,85.0,7.0,60.0,12,1 ]])
+y_predict = random_forest_classifier.predict([[52.32,94.464,92.696,18.464,5.464,56.16,0,6]])
 
-#print(y_predict)
+print(y_predict)
 
 
 pickle.dump(random_forest_classifier,open("model.pkl","wb"))
